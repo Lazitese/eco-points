@@ -26,22 +26,16 @@ jobs:
           channel: 'stable'
 
       - name: Get Flutter packages
-        run: |
-          cd eco_points
-          flutter pub get
+        run: flutter pub get
 
       - name: Clean build
-        run: |
-          cd eco_points
-          flutter clean
+        run: flutter clean
 
       - name: Build APK
-        run: |
-          cd eco_points
-          flutter build apk --release
+        run: flutter build apk --release
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: eco-points-apk
-          path: eco_points/build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
