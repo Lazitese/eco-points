@@ -5,6 +5,10 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: eco_points
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,12 +32,6 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Make gradlew executable
-        run: |
-          cd android
-          gradle wrapper
-        working-directory: eco_points
-
       - name: Build APK
         run: flutter build apk --release
 
@@ -41,4 +39,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: eco-points-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: eco_points/build/app/outputs/flutter-apk/app-release.apk
