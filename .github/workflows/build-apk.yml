@@ -28,14 +28,14 @@ jobs:
       - name: Get Flutter packages
         run: flutter pub get
 
-      - name: Clean build
-        run: flutter clean
+      - name: Build APK
+        run: flutter build apk --release
 
-      - name: Build APK (verbose)
-        run: flutter build apk --release -v 2>&1 | tail -n 150
+      - name: Find APK
+        run: find . -name "*.apk" 2>/dev/null
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: eco-points-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: "**/*.apk"
