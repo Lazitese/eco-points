@@ -1,0 +1,46 @@
+name: eco_points
+description: Eco Points - Walk, Verify, Earn
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Supabase
+  supabase_flutter: ^2.5.6
+
+  # Routing
+  go_router: ^14.2.7
+
+  # Camera (no gallery)
+  camera: ^0.11.0+2
+
+  # Location / Walking
+  geolocator: ^12.0.0
+
+  # Permissions
+  permission_handler: ^11.3.1
+
+  # UI
+  google_fonts: ^6.2.1
+  flutter_animate: ^4.5.0
+  cached_network_image: ^3.3.1
+
+  # Utils
+  uuid: ^4.4.0
+  intl: ^0.19.0
+  path: ^1.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
